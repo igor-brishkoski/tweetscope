@@ -6,8 +6,8 @@
 </p>
 
   <h2>Latest Tweets</h2>
-  <% @keyword.grab_tweets.each do |tweet| %>
-    <p><%= tweet %></p>
+  <% @keyword.tweets.each do |tweet| %>
+    <p><%= tweet.user_screen_name %>: <%= tweet.text %></p>
   <%end%>
 
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
