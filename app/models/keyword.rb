@@ -33,5 +33,6 @@ class Keyword < ActiveRecord::Base
   def self.grab_all_tweets
     Keyword.all.each do |keyword|
       keyword.grab_tweets
+    end
   end
 end

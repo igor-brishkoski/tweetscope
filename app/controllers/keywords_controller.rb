@@ -10,6 +10,7 @@ class KeywordsController < ApplicationController
   # GET /keywords/1
   # GET /keywords/1.json
   def show
+    @keyword.grab_tweets
   end
 
   # GET /keywords/new
@@ -28,6 +29,7 @@ class KeywordsController < ApplicationController
 
     respond_to do |format|
       if @keyword.save
+        @keyword.grab_tweets
         format.html { redirect_to @keyword, notice: 'Keyword was successfully created.' }
         format.json { render :show, status: :created, location: @keyword }
       else
