@@ -29,4 +29,9 @@ class Keyword < ActiveRecord::Base
       end
     end
   end
+
+  def self.grab_all_tweets
+    Keyword.all.each do |keyword|
+      keyword.grab_tweets
+  end
 end
